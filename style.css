@@ -5,7 +5,10 @@ body {
   background-color: #f5f0e1; /* ljus sandfärg */
   color: #333;
   margin: 0;
-  padding: 0 20px; /* lite luft mot sidans kant */
+}
+
+main {
+  padding: 0 40px; 
 }
 
 .hero {
@@ -63,7 +66,7 @@ h2, h3 {
 }
 
 .gallery-section {
-  padding: 20px;
+  padding: 0px;
   background-color: #f0f0f0;
   text-align: center;
 }
@@ -94,6 +97,7 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   color: #f5f0e1; /* ljus text mot mörk bakgrund */
+  padding: 0; 
 }
 
 /* Lightbox */
