@@ -1,17 +1,19 @@
-const galleryButtons = document.querySelectorAll('.gallery button');
+const galleryLinks = document.querySelectorAll('.gallery a');
 
-galleryButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
+galleryLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault(); // hindrar att länken öppnas normalt
+
     const overlay = document.createElement('div');
     overlay.className = 'lightbox-overlay';
 
     const img = document.createElement('img');
-    img.src = btn.dataset.full;
+    img.src = link.dataset.full;
     overlay.appendChild(img);
 
     const caption = document.createElement('div');
     caption.className = 'lightbox-caption';
-    caption.textContent = btn.dataset.caption;
+    caption.textContent = link.dataset.caption;
     overlay.appendChild(caption);
 
     overlay.addEventListener('click', () => {
