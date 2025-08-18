@@ -88,16 +88,27 @@ header .brand {
    Galleri (CSS Grid)
 ======================== */
 .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1em;
-  padding: 0 1em;
-  align-items: start;
+  margin-top: 2em;
 }
 
 .gallery figure {
   margin: 0;
   text-align: center;
+}
+.gallery img {
+  max-width: 100%;
+  height: auto;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 /* Knappen som omsluter bild + figcaption */
@@ -171,4 +182,44 @@ footer {
   margin-top: 0.75em;
   font-size: 1rem;
   line-height: 1.4;
+}
+
+/* --- Placeholder-bilder i löptexten --- */
+.placeholder {
+  width: 100%;
+  max-width: 600px; /* anpassa efter textbredd */
+  height: 300px; /* standardhöjd, kan justeras per bild */
+  background-color: #e0e0e0;
+  border: 2px dashed #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+  font-style: italic;
+  color: #666;
+  font-size: 1rem;
+}
+
+/* --- Footnotes / bildcredits i footer --- */
+footer .footnotes {
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 0.5em;
+  line-height: 1.2;
+}
+
+/* --- Placeholder-bilder i löptexten --- */
+.placeholder {
+  width: 100%;
+  max-width: 600px; /* anpassa efter textbredd */
+  height: 300px; /* standardhöjd, kan justeras per bild */
+  background-color: #e0e0e0;
+  border: 2px dashed #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em 0;
+  font-style: italic;
+  color: #666;
+  font-size: 1rem;
 }
