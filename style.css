@@ -4,11 +4,15 @@ body {
   line-height: 1.6;
   background-color: #f5f0e1; /* ljus sandfärg */
   color: #333;
-  margin: 0;
+  margin: 10;
 }
 
 main {
-  padding: 0 40px; 
+  padding: 0 60px; 
+}
+
+.text-section {
+  padding: 0 60px;
 }
 
 .hero {
@@ -130,7 +134,7 @@ h2, h3 {
 }
 
 footer {
-  background-color: #556b2f; /* dovt mellangrönt */
+  background-color: #204104; /* dovt mellangrönt */
   padding: 10px;
   text-align: center;
   font-size: 0.9rem;
