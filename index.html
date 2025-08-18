@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bokrullens historia</title>
+  <meta name="description" content="En enkel, responsiv webbplats om bokrullens historia med ingress, historik, galleri och avsnittet Idag." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand"><div class="dot"></div>Bokrullens historia</div>
+      <nav>
+        <a href="#historik">Historik</a>
+        <a href="#galleri">Galleri</a>
+        <a href="#idag">Idag</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="ingress">
+        <h1>Bokrullens historia</h1>
+        <p class="lede">Från antikens bibliotek till dagens digitala dokument – en resa genom tiden.</p>
+      </div>
+    </section>
+
+    <section id="historik">
+      <h2>Historik</h2>
+      <div class="card">
+        <div class="timeline">
+          <div class="event"><time>ca 3000 f.Kr.</time><p>De första kända bokrullarna tillverkades i Egypten av papyrus.</p></div>
+          <div class="event"><time>ca 500 f.Kr.</time><p>Bokrullar användes i Grekland och Rom för litteratur, filosofi och administration.</p></div>
+          <div class="event"><time>ca 400 e.Kr.</time><p>Kodexen – den tidiga boken – började ersätta bokrullen.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galleri">
+      <h2>Galleri</h2>
+      <div class="gallery">
+        <figure>
+          <button data-full="" data-caption="Bokrulle 1"><img src="" alt="Bokrulle 1" /><figcaption>Bokrulle 1</figcaption></button>
+        </figure>
+        <figure>
+          <button data-full="" data-caption="Bokrulle 2"><img src="" alt="Bokrulle 2" /><figcaption>Bokrulle 2</figcaption></button>
+        </figure>
+        <figure>
+          <button data-full="" data-caption="Bokrulle 3"><img src="" alt="Bokrulle 3" /><figcaption>Bokrulle 3</figcaption></button>
+        </figure>
+        <figure>
+          <button data-full="" data-caption="Bokrulle 4"><img src="" alt="Bokrulle 4" /><figcaption>Bokrulle 4</figcaption></button>
+        </figure>
+      </div>
+    </section>
+
+    <section id="idag">
+      <h2>Idag</h2>
+      <div class="card today">
+        <p>Idag används bokrullen främst som symbol och ceremoniellt objekt, men dess idé lever vidare i digitala former som e-böcker och dokumentläsare.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Bokrullens historia</p>
+  </footer>
+
+  <dialog id="lightbox" class="lightbox">
+    <img id="lightboxImg" src="" alt="" />
+    <div class="bar">
+      <span id="lightboxCaption"></span>
+      <button class="close" onclick="document.getElementById('lightbox').close()">Stäng</button>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
