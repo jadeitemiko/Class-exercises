@@ -1,10 +1,11 @@
 body {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  margin: 0;
   background-color: #f5f0e1; /* ljus sandfärg */
   color: #333;
+  margin: 0;
+  padding: 0 20px; /* lite luft mot sidans kant */
 }
 
 .hero {
@@ -35,8 +36,8 @@ body {
 }
 
 .hero-ingress {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-weight: 500; /* något tyngre än brödtext */
+  font-size: 1.25rem;
 }
 
 .intro-text {
@@ -44,9 +45,13 @@ body {
   max-width: 800px;
   margin: 0 auto;
 }
-section h2, section h3 {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif;
-  color: #2a2a2a;
+
+h2, h3 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700; /* tyngre */
+  color: #2e4d3a; /* dovt mellangrönt */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 .text-image img {
