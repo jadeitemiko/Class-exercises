@@ -1,15 +1,17 @@
 /* ========================
-   Grundläggande body, font och layout
+   Bas
 ======================== */
+* { box-sizing: border-box; }
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
-  padding: 0;
-  background: #fff;
   color: #333;
+  background: #fff;
 }
 
+/* Header */
 header .nav {
   display: flex;
   justify-content: space-between;
@@ -31,85 +33,95 @@ header .brand {
 }
 
 /* ========================
-   Hero-banner
+   Hero (med din nya bild)
 ======================== */
 .hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  max-height: 500px;
   background-image: url('Kiyomizudera_engi_emaki_-_Scroll1_Pic10.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
   background-size: cover;
-  padding: 100px 20px 40px 20px;
-  text-align: center;
+  background-position: top center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
-  position: relative;
-}
-
-.hero .ingress h1,
-.hero .ingress p {
-  position: relative;
-  z-index: 1;
+  text-align: center;
+  overflow: hidden;
 }
 
 .hero::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
   background: rgba(0,0,0,0.3);
   z-index: 0;
 }
 
+.hero .ingress { position: relative; z-index: 1; padding: 0 1em; }
+.hero .ingress h1 { font-size: 2.2em; margin: 0 0 0.5em; }
+.hero .ingress .lede { font-size: 1.2em; margin: 0; }
+
+@media (min-width: 600px) {
+  .hero .ingress h1 { font-size: 3em; }
+  .hero .ingress .lede { font-size: 1.5em; }
+}
+@media (min-width: 900px) {
+  .hero .ingress h1 { font-size: 3.5em; }
+  .hero .ingress .lede { font-size: 1.8em; }
+}
+
 /* ========================
-   Kort (cards)
+   Cards
 ======================== */
 .card {
   background: #f9f9f9;
   padding: 1em;
-  margin-bottom: 1em;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  margin: 1em;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 /* ========================
-   Galleri
+   Galleri (CSS Grid)
 ======================== */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1em;
-  justify-content: center;
+  padding: 0 1em;
+  align-items: start;
 }
 
 .gallery figure {
   margin: 0;
-  width: 200px;
   text-align: center;
 }
 
-.gallery .thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;   /* alltid kvadratisk */
-  object-fit: cover;      /* beskär utan att deformera */
+/* Knappen som omsluter bild + figcaption */
+.gallery button {
+  /* Nollställ knappens standardstil så layouten inte bryts */
+  all: unset;
   display: block;
-  border-radius: 4px;
+  width: 100%;
   cursor: pointer;
 }
 
+/* Kvadratiska thumbnails */
+.gallery .thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+}
+
+/* Bildtext */
 .gallery figcaption {
   font-size: 0.9em;
   margin-top: 0.5em;
-}
-
-/* Responsiv galleri-layout */
-@media (min-width: 600px) {
-  .gallery figure {
-    width: calc(50% - 20px);
-  }
-}
-
-@media (min-width: 900px) {
-  .gallery figure {
-    width: calc(25% - 20px);
-  }
 }
 
 /* ========================
@@ -120,53 +132,43 @@ footer {
   padding: 1em;
   background: #444;
   color: #fff;
+  margin-top: 2em;
 }
 
 /* ========================
-   Lightbox
+   Lightbox (overlay)
 ======================== */
-.lightbox {
+.lightbox-overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #000;
-  padding: 10px;
-  border-radius: 5px;
-  max-width: 90%;
-  max-height: 90%;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .25s ease;
   z-index: 1000;
+  padding: 1em;
 }
 
-.lightbox img {
-  max-width: 100%;
+.lightbox-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.lightbox-overlay img {
+  max-width: 92vw;
   max-height: 80vh;
-  display: block;
-  border-radius: 4px;
+  border-radius: 6px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
 }
 
-.lightbox .bar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-top: 0.5em;
+.lightbox-overlay .caption {
   color: #fff;
-  font-size: 0.9em;
-}
-
-.lightbox .close {
-  background: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 0.3em 0.6em;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* Bakgrundsoverlay (för modal-effekt) */
-dialog::backdrop {
-  background: rgba(0,0,0,0.7);
+  text-align: center;
+  margin-top: 0.75em;
+  font-size: 1rem;
+  line-height: 1.4;
 }

@@ -1,46 +1,103 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Bokrullens historia</title>
-  <meta name="description" content="En enkel, responsiv webbplats om bokrullens historia med ingress, historik, galleri och avsnittet Idag." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yōkai – utställning</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
     <div class="nav">
-      <div class="brand"><div class="dot"></div>Bokrullens historia</div>
+      <div class="brand">Yōkai-utställning</div>
       <nav>
-        <a href="#historik">Historik</a>
+        <a href="#om">Om</a>
         <a href="#galleri">Galleri</a>
-        <a href="#idag">Idag</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="ingress">
-        <h1>Bokrullens historia</h1>
-        <p class="lede">Från antikens bibliotek till dagens digitala dokument – en resa genom tiden.</p>
-      </div>
-    </section>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="ingress">
+      <h1>Yōkai – Japanska väsen</h1>
+      <p class="lede">En resa genom myter, bilder och berättelser</p>
+    </div>
+  </section>
 
-    <section id="historik">
-      <h2>Historik</h2>
-      <div class="card">
-        <div class="timeline">
-          <div class="event"><time>ca 3000 f.Kr.</time><p>De första kända bokrullarna tillverkades i Egypten av papyrus.</p></div>
-          <div class="event"><time>ca 500 f.Kr.</time><p>Bokrullar användes i Grekland och Rom för litteratur, filosofi och administration.</p></div>
-          <div class="event"><time>ca 400 e.Kr.</time><p>Kodexen – den tidiga boken – började ersätta bokrullen.</p></div>
-        </div>
-      </div>
-    </section>
+  <!-- Om-sektion -->
+  <section id="om" class="card">
+    <h2>Om utställningen</h2>
+    <p>
+      Utställningen utforskar japanska folktrons väsen – de så kallade yōkai – 
+      genom historiska målningar, träsnitt och berättelser. 
+    </p>
+  </section>
 
-    <section id="galleri">
-      <h2>Galleri</h2>
-      <div class="gallery">
-        <figure>
-          <button data-full="AnthonyRoll-second_roll_sample.jpg" data-caption="Anthony Roll, 1540-talet. CC-PD.">
-            <img src="AnthonyRoll-second_roll_sample.jpg" alt="Anthony Roll, 1540-talet" class="thumb" />
+  <!-- Galleri -->
+  <section id="galleri">
+    <h2>Galleri</h2>
+    <p><em>Klicka på en bild för att se den i större format</em></p>
+
+    <div class="gallery">
+      <figure>
+        <button data-full="AnthonyRoll-second_roll_sample.jpg" data-caption="Anthony Roll, 1540-talet. CC-PD.">
+          <img src="AnthonyRoll-second_roll_sample.jpg" alt="Anthony Roll, 1540-talet" class="thumb" />
+          <figcaption>Anthony Roll (1540-talet) <sup><a href="#footnote1">[1]</a></sup></figcaption>
+        </button>
+      </figure>
+
+      <figure>
+        <button data-full="Kiyomizudera_engi_emaki_-_Scroll1_Pic10.jpg" data-caption="Kiyomizudera engi emaki, Scroll 1, Pic 10. CC-PD.">
+          <img src="Kiyomizudera_engi_emaki_-_Scroll1_Pic10.jpg" alt="Kiyomizudera engi emaki" class="thumb" />
+          <figcaption>Kiyomizudera engi emaki <sup><a href="#footnote2">[2]</a></sup></figcaption>
+        </button>
+      </figure>
+
+      <figure>
+        <button data-full="SekienKappa.jpg" data-caption="Toriyama Sekien: Kappa, Edo-perioden. CC-PD.">
+          <img src="SekienKappa.jpg" alt="Sekien Kappa" class="thumb" />
+          <figcaption>Kappa (Toriyama Sekien) <sup><a href="#footnote3">[3]</a></sup></figcaption>
+        </button>
+      </figure>
+
+      <figure>
+        <button data-full="SekienTengu.jpg" data-caption="Toriyama Sekien: Tengu, Edo-perioden. CC-PD.">
+          <img src="SekienTengu.jpg" alt="Sekien Tengu" class="thumb" />
+          <figcaption>Tengu (Toriyama Sekien) <sup><a href="#footnote4">[4]</a></sup></figcaption>
+        </button>
+      </figure>
+    </div>
+
+    <!-- Credits / Bildrättigheter -->
+    <div class="credits">
+      <p>Bilderna är hämtade från <a href="https://commons.wikimedia.org/" target="_blank">Wikimedia Commons</a>. Bildrättigheter:</p>
+      <ol>
+        <li id="footnote1"><em>Anthony Roll, 1540-talet.</em> Public domain (CC0).</li>
+        <li id="footnote2"><em>Kiyomizudera engi emaki, Scroll 1, Pic 10.</em> Public domain (CC0).</li>
+        <li id="footnote3"><em>Kappa (Toriyama Sekien, Edo-perioden).</em> Public domain (CC0).</li>
+        <li id="footnote4"><em>Tengu (Toriyama Sekien, Edo-perioden).</em> Public domain (CC0).</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="card">
+    <h2>Kontakt</h2>
+    <p>
+      För frågor om utställningen, vänligen kontakta <a href="mailto:info@example.com">info@example.com</a>.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; <span id="year"></span> Etnografiska museet</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
