@@ -1,4 +1,4 @@
-/* Hela CSS-filen med uppdaterad .hero-banner, zoomad bakgrund */
+/* Hela CSS-filen med uppdaterad .hero-banner, zoomad */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -31,14 +31,13 @@ header .brand {
 .hero {
   background-image: url('Kiyomizudera_engi_emaki_-_Scroll_3.jpg');
   background-repeat: no-repeat;
-  background-position: center center; /* fokusera på mitten */
-  background-size: cover; /* zooma in så att bredd och höjd fyller sektionen */
-  padding: 100px 20px 40px 20px; /* mer höjd för att göra bilden tydligare */
+  background-position: center center;
+  background-size: cover;
+  padding: 100px 20px 40px 20px;
   text-align: center;
   color: #fff;
   position: relative;
 }
-
 .hero .ingress h1,
 .hero .ingress p {
   position: relative;
@@ -53,6 +52,11 @@ header .brand {
 }
 
 /* Galleri och thumbnails */
+.gallery-description {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -60,11 +64,20 @@ header .brand {
 }
 .gallery figure {
   margin: 0;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
 }
-.thumb {
-  max-width: 200px;
-  height: auto;
-  display: block;
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.gallery figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  margin-top: 0.5em;
 }
 
 .credits {
@@ -79,6 +92,35 @@ header .brand {
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
+/* Kvadratiska, responsiva thumbnails i galleriet */
+.gallery figure {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.gallery .thumb {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* alltid kvadratisk */
+  object-fit: cover;      /* beskär bilden utan att deformera */
+  display: block;
+  border-radius: 4px;     /* valfritt, rundar hörnen */
+}
+
+/* Responsiv layout för galleriet */
+@media (min-width: 600px) {
+  .gallery figure {
+    width: calc(50% - 20px);  /* två kolumner på tablet/desktop */
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery figure {
+    width: calc(25% - 20px);  /* fyra kolumner på större skärmar */
+  }
+}
+
+
 
 footer {
   text-align: center;
@@ -88,7 +130,32 @@ footer {
 }
 
 /* Lightbox */
-.lightbox img {
-  max-width: 100%;
-  height: auto;
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+.lightbox-overlay.active {
+  visibility: visible;
+  opacity: 1;
+}
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 0 10px #000;
+}
+.lightbox-overlay .caption {
+  color: #fff;
+  text-align: center;
+  margin-top: 0.5em;
 }
