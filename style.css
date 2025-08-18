@@ -1,0 +1,92 @@
+css
+:root{
+  --bg: #0f1115;
+  --fg: #e7e9ee;
+  --muted: #aab0bc;
+  --accent: #d2a86b; /* sand/guld-ton */
+  --card: #171a22;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+  --maxw: 1100px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 20% -10%, #1b1f29 0%, #0f1115 50%, #0f1115 100%); color:var(--fg);
+}
+
+/* Header / nav */
+header{
+  position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(8px);
+  background: rgba(15,17,21,.6); border-bottom:1px solid rgba(255,255,255,.06);
+}
+.nav{
+  max-width:var(--maxw); margin:0 auto; display:flex; align-items:center; gap:16px; padding:10px 16px;
+}
+.brand{ font-weight:700; letter-spacing:.3px; display:flex; align-items:center; gap:10px }
+.brand .dot{ width:10px; height:10px; border-radius:999px; background:var(--accent); box-shadow:0 0 0 6px rgba(210,168,107,.16) }
+nav a{ color:var(--fg); text-decoration:none; padding:8px 12px; border-radius:999px; opacity:.9 }
+nav a:hover{ background:rgba(255,255,255,.06) }
+nav{ margin-left:auto; display:flex; gap:6px; flex-wrap:wrap }
+
+/* Hero / ingress */
+.hero{ max-width:var(--maxw); margin:0 auto; padding:48px 16px 20px }
+.ingress{
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:28px; position:relative; overflow:hidden;
+}
+.ingress:before{
+  content:""; position:absolute; inset:auto -20% -30% -20%; height:50%;
+  background: radial-gradient(600px 200px at 50% 0%, rgba(210,168,107,.12), transparent 60%);
+  pointer-events:none;
+}
+h1{ font-size:clamp(28px, 3.6vw, 44px); line-height:1.1; margin:0 0 10px }
+.lede{ font-size:clamp(18px, 2.2vw, 20px); color:var(--muted); margin:0 }
+
+/* Sections */
+section{ max-width:var(--maxw); margin:24px auto; padding:0 16px }
+h2{ font-size:clamp(22px, 2.6vw, 30px); margin:6px 0 12px }
+.card{ background:var(--card); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow); padding:20px }
+
+/* Historik list */
+.timeline{ display:grid; gap:16px }
+.event{ display:grid; grid-template-columns: 120px 1fr; gap:12px; align-items:start }
+.event time{ font-weight:600; color:var(--accent) }
+.event p{ margin:0; color:var(--fg) }
+
+/* Galleri */
+.gallery{ display:grid; grid-template-columns: repeat(2, 1fr); gap:12px }
+.gallery figure{ margin:0; border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); background:#0c0e12; position:relative }
+.gallery img{ width:100%; height:220px; object-fit:cover; display:block; filter:saturate(.96) contrast(1.02) }
+.gallery figcaption{ position:absolute; inset:auto 8px 8px 8px; background:rgba(0,0,0,.45); padding:6px 8px; border-radius:8px; font-size:13px }
+.gallery button{ all:unset; cursor:pointer; }
+
+/* Idag */
+.today{ display:grid; gap:10px; color:var(--muted) }
+
+/* Footer */
+footer{ max-width:var(--maxw); margin:40px auto 60px; padding:0 16px; color:var(--muted); font-size:14px }
+
+/* Lightbox */
+dialog[open]{ opacity:1; transform:scale(1) }
+dialog{ border:none; padding:0; border-radius:16px; overflow:hidden; background:#000; max-width:min(92vw, 1100px); width:fit-content; box-shadow:var(--shadow); opacity:0; transform:scale(.98); transition:.18s ease; }
+.lightbox img{ max-height:80vh; width:auto; display:block }
+.lightbox .bar{ display:flex; align-items:center; justify-content:space-between; padding:10px 12px; gap:10px; background:#0b0b0b; color:#ddd; font-size:14px }
+.lightbox .close{ all:unset; cursor:pointer; padding:6px 10px; border-radius:8px; border:1px solid rgba(255,255,255,.14) }
+.lightbox .close:hover{ background:#121212 }
+
+@media (max-width:720px){
+  .event{ grid-template-columns: 1fr }
+  .gallery{ grid-template-columns: 1fr }
+  .gallery img{ height:240px }
+}
+
+@media (prefers-color-scheme: light){
+  :root{ --bg:#f6f6f8; --fg:#111319; --muted:#555b67; --card:#ffffff }
+  body{ background: radial-gradient(1000px 700px at 15% -10%, #fff 0%, #f6f6f8 60%, #f6f6f8 100%) }
+  header{ background:rgba(255,255,255,.7); border-bottom:1px solid rgba(0,0,0,.06) }
+  .ingress{ border-color:rgba(0,0,0,.06) }
+  .gallery figcaption{ background:rgba(255,255,255,.7) }
+}
