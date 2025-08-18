@@ -22,10 +22,31 @@ header {
   text-decoration: none;
   margin-left: 1em;
 }
+/* Banner i hero-sektionen */
 .hero {
-  background: #eee;
-  padding: 2em;
+  background-image: url('Kiyomizudera_engi_emaki_-_Scroll_3.jpg');
+  background-repeat: repeat-x; /* upprepar horisontellt om fönstret är bredare */
+  background-position: top center;
+  background-size: auto 40px; /* höjd på 40px, behåller proportioner */
+  padding: 60px 20px 20px 20px; /* extra padding-top så texten inte ligger ovanpå */
   text-align: center;
+  color: #fff;
+  position: relative;
+}
+
+.hero .ingress h1,
+.hero .ingress p {
+  position: relative;
+  z-index: 1; /* säkerställer att texten ligger ovanpå bannerbilden */
+}
+
+/* Eventuellt en svag bakgrundsfärg bakom texten för kontrast */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* svagt mörkt filter för bättre läsbarhet */
+  z-index: 0;
 }
 .card {
   background: #fff;
