@@ -1,225 +1,139 @@
-/* ========================
-   Bas
-======================== */
-* { box-sizing: border-box; }
-
+/* -----------------------------
+   Grundinställningar
+----------------------------- */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
   margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
   color: #333;
-  background: #fff;
 }
 
-/* Header */
-header .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  background: #444;
-  color: #fff;
-}
-
-header .nav a {
-  color: #fff;
-  margin-left: 1em;
+a {
+  color: #1a73e8;
   text-decoration: none;
 }
 
-header .brand {
-  font-weight: bold;
-  font-size: 1.2em;
+a:hover {
+  text-decoration: underline;
 }
 
-/* ========================
-   Hero (med din nya bild)
-======================== */
+/* -----------------------------
+   Hero och ingress
+----------------------------- */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 60vh;
-  max-height: 500px;
-  background-image: url('Kiyomizudera_engi_emaki_-_Scroll1_Pic10.jpg');
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
+  background-color: #ececec;
+  padding: 60px 20px;
   text-align: center;
-  overflow: hidden;
 }
 
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.3);
-  z-index: 0;
+.hero h1 {
+  font-size: 2.5em;
+  margin: 0 0 20px 0;
 }
 
-.hero .ingress { position: relative; z-index: 1; padding: 0 1em; }
-.hero .ingress h1 { font-size: 2.2em; margin: 0 0 0.5em; }
-.hero .ingress .lede { font-size: 1.2em; margin: 0; }
-
-@media (min-width: 600px) {
-  .hero .ingress h1 { font-size: 3em; }
-  .hero .ingress .lede { font-size: 1.5em; }
-}
-@media (min-width: 900px) {
-  .hero .ingress h1 { font-size: 3.5em; }
-  .hero .ingress .lede { font-size: 1.8em; }
+.hero .ingress {
+  font-size: 1.2em;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* ========================
-   Cards
-======================== */
-.card {
-  background: #f9f9f9;
-  padding: 1em;
-  margin: 1em;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+/* -----------------------------
+   Löptext och sektioner
+----------------------------- */
+main {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* ========================
-   Galleri (CSS Grid)
-======================== */
+h2 {
+  font-size: 2em;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Thumbnails i löptext */
+.thumbnail {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Rensa float efter stycken */
+p::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* -----------------------------
+   Galleri
+----------------------------- */
+.galleri {
+  margin-top: 50px;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  gap: 1em;
-  margin-top: 2em;
+  gap: 10px;
+  justify-content: center;
 }
 
-.gallery figure {
-  margin: 0;
-  text-align: center;
-}
 .gallery img {
-  max-width: 100%;
+  width: 200px; /* justera vid behov */
   height: auto;
   cursor: pointer;
   border: 1px solid #ccc;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
 }
 
 .gallery img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transform: scale(1.05);
 }
 
-/* Knappen som omsluter bild + figcaption */
-.gallery button {
-  /* Nollställ knappens standardstil så layouten inte bryts */
-  all: unset;
-  display: block;
-  width: 100%;
-  cursor: pointer;
+/* -----------------------------
+   Credits / fotnoter
+----------------------------- */
+.credits {
+  font-size: 0.8em;
+  color: #555;
+  margin-top: 20px;
 }
 
-/* Kvadratiska thumbnails */
-.gallery .thumb {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  border-radius: 6px;
+.credits ol {
+  padding-left: 20px;
 }
 
-/* Bildtext */
-.gallery figcaption {
-  font-size: 0.9em;
-  margin-top: 0.5em;
+.credits li {
+  margin-bottom: 5px;
 }
 
-/* ========================
+/* -----------------------------
    Footer
-======================== */
+----------------------------- */
 footer {
+  background-color: #ececec;
   text-align: center;
-  padding: 1em;
-  background: #444;
-  color: #fff;
-  margin-top: 2em;
-}
-
-/* ========================
-   Lightbox (overlay)
-======================== */
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity .25s ease;
-  z-index: 1000;
-  padding: 1em;
-}
-
-.lightbox-overlay.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-.lightbox-overlay img {
-  max-width: 92vw;
-  max-height: 80vh;
-  border-radius: 6px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-}
-
-.lightbox-overlay .caption {
-  color: #fff;
-  text-align: center;
-  margin-top: 0.75em;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-/* --- Placeholder-bilder i löptexten --- */
-.placeholder {
-  width: 100%;
-  max-width: 600px; /* anpassa efter textbredd */
-  height: 300px; /* standardhöjd, kan justeras per bild */
-  background-color: #e0e0e0;
-  border: 2px dashed #aaa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em 0;
-  font-style: italic;
-  color: #666;
-  font-size: 1rem;
-}
-
-/* --- Footnotes / bildcredits i footer --- */
-footer .footnotes {
-  font-size: 0.75rem;
-  color: #999;
-  margin-top: 0.5em;
-  line-height: 1.2;
-}
-
-/* --- Placeholder-bilder i löptexten --- */
-.placeholder {
-  width: 100%;
-  max-width: 600px; /* anpassa efter textbredd */
-  height: 300px; /* standardhöjd, kan justeras per bild */
-  background-color: #e0e0e0;
-  border: 2px dashed #aaa;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1em 0;
-  font-style: italic;
-  color: #666;
-  font-size: 1rem;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 0.9em;
+  color: #555;
 }

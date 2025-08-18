@@ -1,7 +1,7 @@
-// Visa aktuellt år i sidfoten
+// ---- Visa aktuellt år i sidfoten ----
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// ---- Ren overlay-lightbox (ingen <dialog> behövs) ----
+// ---- Ren overlay-lightbox ----
 const lightboxOverlay = document.createElement('div');
 lightboxOverlay.classList.add('lightbox-overlay');
 
@@ -13,19 +13,17 @@ lightboxOverlay.appendChild(overlayImg);
 lightboxOverlay.appendChild(overlayCaption);
 document.body.appendChild(lightboxOverlay);
 
-// Öppna vid klick på valfri knapp i galleriet
-document.querySelectorAll('.gallery button').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    const full = btn.getAttribute('data-full');
-    const caption = btn.getAttribute('data-caption') || 'Bild';
-    overlayImg.src = full;
-    overlayImg.alt = caption;
-    overlayCaption.textContent = caption;
+// ---- Öppna lightbox vid klick på galleri-bild ----
+document.querySelectorAll('.gallery img').forEach((img) => {
+  img.addEventListener('click', () => {
+    overlayImg.src = img.src;
+    overlayImg.alt = img.alt || 'Bild';
+    overlayCaption.textContent = img.getAttribute('data-caption') || img.alt || 'Bild';
     lightboxOverlay.classList.add('active');
   });
 });
 
-// Stäng lightbox vid klick på overlay eller ESC
+// ---- Stäng lightbox vid klick på overlay eller ESC ----
 lightboxOverlay.addEventListener('click', () => {
   lightboxOverlay.classList.remove('active');
 });
