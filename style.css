@@ -1,34 +1,39 @@
-/* Hela CSS-filen: spara som style.css */
+/* Hela CSS-filen med uppdaterad .hero-banner, zoomad bakgrund */
 body {
   font-family: Arial, sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
-  line-height: 1.5;
-  background: #f8f8f8;
+  background: #fff;
   color: #333;
 }
-header {
-  background: #333;
-  color: #fff;
-  padding: 1em 2em;
-}
-.nav {
+
+header .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.nav a {
+  padding: 1em;
+  background: #444;
   color: #fff;
-  text-decoration: none;
-  margin-left: 1em;
 }
-/* Banner i hero-sektionen */
+header .nav a {
+  color: #fff;
+  margin-left: 1em;
+  text-decoration: none;
+}
+
+header .brand {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Hero-banner med bakgrundsbild, zoomad */
 .hero {
   background-image: url('Kiyomizudera_engi_emaki_-_Scroll_3.jpg');
-  background-repeat: repeat-x; /* upprepar horisontellt om fönstret är bredare */
-  background-position: top center;
-  background-size: auto 40px; /* höjd på 40px, behåller proportioner */
-  padding: 60px 20px 20px 20px; /* extra padding-top så texten inte ligger ovanpå */
+  background-repeat: no-repeat;
+  background-position: center center; /* fokusera på mitten */
+  background-size: cover; /* zooma in så att bredd och höjd fyller sektionen */
+  padding: 100px 20px 40px 20px; /* mer höjd för att göra bilden tydligare */
   text-align: center;
   color: #fff;
   position: relative;
@@ -37,75 +42,53 @@ header {
 .hero .ingress h1,
 .hero .ingress p {
   position: relative;
-  z-index: 1; /* säkerställer att texten ligger ovanpå bannerbilden */
+  z-index: 1;
 }
-
-/* Eventuellt en svag bakgrundsfärg bakom texten för kontrast */
 .hero::after {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3); /* svagt mörkt filter för bättre läsbarhet */
+  background: rgba(0,0,0,0.3);
   z-index: 0;
 }
-.card {
-  background: #fff;
-  padding: 1em;
-  margin: 1em 2em;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+
+/* Galleri och thumbnails */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 1em;
 }
 .gallery figure {
   margin: 0;
 }
-.gallery img {
-  max-width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
-}
-.gallery img.thumb {
-  width: 200px;
+.thumb {
+  max-width: 200px;
   height: auto;
+  display: block;
 }
-figcaption {
-  text-align: center;
-  margin-top: 0.5em;
+
+.credits {
+  margin-top: 2em;
   font-size: 0.9em;
 }
-.credits sup {
-  font-size: 0.8em;
-  vertical-align: super;
-}
-.credits {
-  font-size: 0.85em;
-  font-style: italic;
-  margin-top: 0.5em;
-  text-align: center;
-}
-/* Lightbox */
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(0,0,0,0.8);
+
+.card {
+  background: #f9f9f9;
   padding: 1em;
-  border-radius: 8px;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
 }
-.lightbox img {
-  max-width: 90vw;
-  max-height: 80vh;
-}
-.lightbox .bar {
-  display: flex;
-  justify-content: space-between;
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #444;
   color: #fff;
-  margin-top: 0.5em;
+}
+
+/* Lightbox */
+.lightbox img {
+  max-width: 100%;
+  height: auto;
 }
