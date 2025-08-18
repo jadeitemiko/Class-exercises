@@ -48,6 +48,10 @@ header {
   border-radius: 4px;
   cursor: pointer;
 }
+.gallery img.thumb {
+  width: 200px;
+  height: auto;
+}
 figcaption {
   text-align: center;
   margin-top: 0.5em;
