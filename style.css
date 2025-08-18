@@ -7,9 +7,25 @@ body {
 }
 
 .hero {
-  background-color: #e0e0e0;
-  padding: 60px 20px;
+  position: relative;
   text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
 }
 
 .hero h1 {
@@ -40,9 +56,10 @@ section h3 {
 }
 
 .text-image img {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: contain;
   margin: 10px 0;
 }
 
@@ -90,7 +107,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  display: none;
   z-index: 999;
 }
 

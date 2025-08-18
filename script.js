@@ -1,4 +1,3 @@
-// Lightbox-funktionalitet
 const galleryButtons = document.querySelectorAll('.gallery button');
 
 galleryButtons.forEach(btn => {
