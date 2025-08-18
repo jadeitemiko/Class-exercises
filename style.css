@@ -71,28 +71,17 @@ h2, h3 {
   text-align: center;
 }
 
-.credits {
-  font-size: 0.75rem;
-  text-align: left;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-footer {
-  background-color: #556b2f; /* dovt mellangrönt */
-  padding: 10px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #f5f0e1; /* ljus text mot mörk bakgrund */
-  padding: 0; 
-}
-
-.gallery a img {
-  width: 100%;
-  height: auto;
-  display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.gallery a {
+  display: inline-block;
+  margin: 5px;
   cursor: pointer;
+}
+.gallery a img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gallery a img:hover {
@@ -131,4 +120,20 @@ footer {
 .lightbox-caption sup {
   font-size: 0.8rem;
   vertical-align: super;
+}
+
+.credits {
+  font-size: 0.75rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+footer {
+  background-color: #556b2f; /* dovt mellangrönt */
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #f5f0e1; /* ljus text mot mörk bakgrund */
+  padding: 0; 
 }
