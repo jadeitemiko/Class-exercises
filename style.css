@@ -1,139 +1,106 @@
-/* -----------------------------
-   Grundinställningar
------------------------------ */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Georgia', serif;
   line-height: 1.6;
   margin: 0;
-  padding: 0;
   background-color: #f9f9f9;
   color: #333;
 }
 
-a {
-  color: #1a73e8;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* -----------------------------
-   Hero och ingress
------------------------------ */
 .hero {
-  background-color: #ececec;
+  background-color: #e0e0e0;
   padding: 60px 20px;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 2.5em;
-  margin: 0 0 20px 0;
+  font-size: 3rem;
+  margin: 0;
 }
 
-.hero .ingress {
-  font-size: 1.2em;
-  color: #555;
-  max-width: 700px;
+.hero-ingress {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.intro-text {
+  padding: 20px;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-/* -----------------------------
-   Löptext och sektioner
------------------------------ */
-main {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-h2 {
-  font-size: 2em;
+section h2 {
+  font-size: 2rem;
   margin-top: 40px;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #ccc;
-  padding-bottom: 5px;
+  text-align: center;
 }
 
-h3 {
-  font-size: 1.5em;
+section h3 {
+  font-size: 1.5rem;
   margin-top: 30px;
-  margin-bottom: 15px;
 }
 
-/* Thumbnails i löptext */
-.thumbnail {
+.text-image img {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  float: left;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin: 10px 0;
 }
 
-/* Rensa float efter stycken */
-p::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* -----------------------------
-   Galleri
------------------------------ */
-.galleri {
-  margin-top: 50px;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 200px; /* justera vid behov */
-  height: auto;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: transform 0.2s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-/* -----------------------------
-   Credits / fotnoter
------------------------------ */
-.credits {
-  font-size: 0.8em;
-  color: #555;
-  margin-top: 20px;
-}
-
-.credits ol {
-  padding-left: 20px;
-}
-
-.credits li {
-  margin-bottom: 5px;
-}
-
-/* -----------------------------
-   Footer
------------------------------ */
-footer {
-  background-color: #ececec;
+.gallery-section {
+  padding: 20px;
+  background-color: #f0f0f0;
   text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
-  font-size: 0.9em;
-  color: #555;
+}
+
+.gallery button {
+  border: none;
+  background: none;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.gallery button img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.credits {
+  font-size: 0.75rem;
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+footer {
+  background-color: #ccc;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  z-index: 999;
+}
+
+.lightbox-overlay img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.lightbox-caption {
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
 }

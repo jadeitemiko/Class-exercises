@@ -1,35 +1,27 @@
-// ---- Visa aktuellt år i sidfoten ----
-document.getElementById('year').textContent = new Date().getFullYear();
+// Lightbox-funktionalitet
+const galleryButtons = document.querySelectorAll('.gallery button');
 
-// ---- Ren overlay-lightbox ----
-const lightboxOverlay = document.createElement('div');
-lightboxOverlay.classList.add('lightbox-overlay');
+galleryButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
 
-const overlayImg = document.createElement('img');
-const overlayCaption = document.createElement('div');
-overlayCaption.classList.add('caption');
+    const img = document.createElement('img');
+    img.src = btn.dataset.full;
+    overlay.appendChild(img);
 
-lightboxOverlay.appendChild(overlayImg);
-lightboxOverlay.appendChild(overlayCaption);
-document.body.appendChild(lightboxOverlay);
+    const caption = document.createElement('div');
+    caption.className = 'lightbox-caption';
+    caption.textContent = btn.dataset.caption;
+    overlay.appendChild(caption);
 
-// ---- Öppna lightbox vid klick på galleri-bild ----
-document.querySelectorAll('.gallery img').forEach((img) => {
-  img.addEventListener('click', () => {
-    overlayImg.src = img.src;
-    overlayImg.alt = img.alt || 'Bild';
-    overlayCaption.textContent = img.getAttribute('data-caption') || img.alt || 'Bild';
-    lightboxOverlay.classList.add('active');
+    overlay.addEventListener('click', () => {
+      overlay.remove();
+    });
+
+    document.body.appendChild(overlay);
   });
 });
 
-// ---- Stäng lightbox vid klick på overlay eller ESC ----
-lightboxOverlay.addEventListener('click', () => {
-  lightboxOverlay.classList.remove('active');
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
-    lightboxOverlay.classList.remove('active');
-  }
-});
+// Automatisk årtal i footer
+document.getElementById('year').textContent = new Date().getFullYear();
