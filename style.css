@@ -75,6 +75,12 @@ h2, h3 {
   margin: 10px 0;
 }
 
+img[src*="t-"] {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
 .gallery-section {
   padding: 0px;
   background-color: #f0f0f0;
