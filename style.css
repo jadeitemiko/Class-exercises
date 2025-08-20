@@ -79,6 +79,8 @@ img[src*="t-"] {
   width: 100px;
   height: 100px;
   object-fit: cover;
+  float: left; 
+  margin: 0 15px 15px 0;
 }
 
 .gallery-section {
