@@ -34,6 +34,14 @@ main {
   }
 }
 
+.hero,
+.intro-text,
+.text-section,
+.today,
+.gallery-section {
+  margin-bottom: 40px; /* justera efter behov */
+}
+
 .intro-text,
 .text-section,
 .today {
