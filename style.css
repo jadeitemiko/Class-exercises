@@ -13,11 +13,19 @@ main {
 
 @media (min-width: 900px) {
   main {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: justify; /* valfritt */
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #f8f5f0;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 }
+
+@media (min-width: 1200px) {
+  main {
+    max-width: 900px;
+  }
 
 .text-section {
   padding: 0 60px;
