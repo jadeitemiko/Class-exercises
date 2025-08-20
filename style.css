@@ -11,24 +11,34 @@ main {
   padding: 0 60px; 
 }
 
+/* På större skärmar: centrerad kolumn med max-width, ljus bakgrund, rundade hörn och padding */
 @media (min-width: 900px) {
-  main {
-    max-width: 700px;
-    margin: 20px auto;
+  .intro-text,
+  .text-section,
+  .today {
+    max-width: 800px;
     background-color: #f8f5f0;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin: 20px auto; /* centrerar blocket */
   }
 }
 
+/* Ännu bredare på stora skärmar */
 @media (min-width: 1200px) {
-  main {
-    max-width: 900px;
+  .intro-text,
+  .text-section,
+  .today {
+    max-width: 1000px;
   }
+}
 
-.text-section {
-  padding: 0 60px;
+.intro-text,
+.text-section,
+.today {
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .hero {
