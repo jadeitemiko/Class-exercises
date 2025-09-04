@@ -1,8 +1,6 @@
 const galleryLinks = document.querySelectorAll('.gallery a');
 const bookingForm = document.getElementById('bokningsformular');
 
-const bookingForm = document.getElementById('bokningsformular');
-
 if (bookingForm) {
   bookingForm.addEventListener('submit', function(event) {
     event.preventDefault(); 
@@ -61,6 +59,7 @@ galleryLinks.forEach(link => {
 
 // Automatisk årtal i footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
 
 
 
