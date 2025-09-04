@@ -11,16 +11,17 @@ if (bookingForm) {
     const phone = bookingForm.querySelector('#telefon').value;
     const wantsFood = bookingForm.querySelector('#mat_checkbox').checked;
     const wantsConference = bookingForm.querySelector('#konferens_checkbox').checked;
-    const wantsActivities = bookingForm.querySelector('#aktiviteter_checkbox').checked; // Ny rad
+    const wantsActivities = bookingForm.querySelector('#aktiviteter_checkbox').checked;
     const startDate = bookingForm.querySelector('#startdatum').value;
     const endDate = bookingForm.querySelector('#slutdatum').value;
     
-    // Skicka eventet till GA4 med separerade parametrar
-    gtag('event', 'group_booking_request', {
+    // Skicka eventet till GA4 med separerade parametrar, via dataLayer
+    dataLayer.push({
+      'event': 'group_booking_request',
       'number_of_people': parseInt(numPeople, 10),
       'wants_food': wantsFood,
       'wants_conference_room': wantsConference,
-      'wants_activities': wantsActivities, // Ny parameter
+      'wants_activities': wantsActivities,
       'contact_info_email': email,
       'contact_info_phone': phone,
       'booking_date_range': `${startDate}_${endDate}`
