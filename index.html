@@ -70,6 +70,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </section>
 
+<form id="bokningsformular">
+        <h2>Boka din gruppresa</h2>
+
+        <label for="antal_pers">Antal personer:</label>
+        <input type="number" id="antal_pers" name="antal_pers" value="10" required>
+
+        <label for="epost">E-post:</label>
+        <input type="email" id="epost" name="epost" placeholder="din.epost@exempel.se" required>
+
+        <label for="telefon">Telefonnummer:</label>
+        <input type="tel" id="telefon" name="telefon" placeholder="070-123 45 67" required>
+
+        <p>Vilka tjänster önskar ni lägga till?</p>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="mat_checkbox" name="tjanster" value="mat" checked> Mat & dryck</label>
+            <label><input type="checkbox" id="konferens_checkbox" name="tjanster" value="konferens" checked> Konferenslokal</label>
+            <label><input type="checkbox" id="aktiviteter_checkbox" name="tjanster" value="aktiviteter"> Aktiviteter</label>
+        </div>
+
+        <label for="startdatum">Startdatum:</label>
+        <input type="date" id="startdatum" name="startdatum" value="2025-10-01" required>
+
+        <label for="slutdatum">Slutdatum:</label>
+        <input type="date" id="slutdatum" name="slutdatum" value="2025-10-03" required>
+        
+        <button type="submit">Skicka bokningsförfrågan</button>
+    </form>
+  
 <!-- Galleri -->
 <section class="gallery-section">
   <h2>Galleri</h2>
@@ -110,4 +138,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <script src="scripts.js"></script>
 </body>
+
 </html>
