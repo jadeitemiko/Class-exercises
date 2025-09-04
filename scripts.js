@@ -26,10 +26,6 @@ if (bookingForm) {
       'contact_info_phone': phone,
       'booking_date_range': `${startDate}_${endDate}`
     });
-    
-    setTimeout(function() {
-        bookingForm.submit();
-    }, 500);
   });
 }
 galleryLinks.forEach(link => {
