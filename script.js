@@ -1,5 +1,9 @@
 const galleryLinks = document.querySelectorAll('.gallery a');
-
+gtag("event", "generate_lead", {
+  group_size: 12,
+  group_type: "corporate",
+  activities: ["Food", "Entertainment"]
+});
 galleryLinks.forEach(link => {
   link.addEventListener('click', (e) => {
     e.preventDefault(); // hindrar att länken öppnas normalt
@@ -26,3 +30,4 @@ galleryLinks.forEach(link => {
 
 // Automatisk årtal i footer
 document.getElementById('year').textContent = new Date().getFullYear();
+
